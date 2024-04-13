@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://h253g1o2v8j3"]
+
+[ext_resource type="Script" path="res://single-block.gd" id="1_txdqb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwmou"]
+size = Vector2(38, 38)
+
+[node name="ROOT" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(20, 20)
+script = ExtResource("1_txdqb")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_lwmou")
+
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(1, 0.992157, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(20, -20)
+script = ExtResource("1_txdqb")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+shape = SubResource("RectangleShape2D_lwmou")
+
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D2"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(1, 0.992157, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="."]
+position = Vector2(-20, -20)
+script = ExtResource("1_txdqb")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
+shape = SubResource("RectangleShape2D_lwmou")
+
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D3"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(1, 0.992157, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="."]
+position = Vector2(-20, 20)
+script = ExtResource("1_txdqb")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4"]
+shape = SubResource("RectangleShape2D_lwmou")
+
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D4"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(1, 0.992157, 0, 1)
+metadata/_edit_use_anchors_ = true

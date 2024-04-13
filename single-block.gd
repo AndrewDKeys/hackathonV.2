@@ -8,7 +8,7 @@ func _ready():
 	
 	# TO BE REPLACED ONCE ROUNDS START CHANGING STUFF
 	vertical_speed = 50 
-	apply_central_force(Vector2(0, vertical_speed))
+	linear_velocity = Vector2(0, 50)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):

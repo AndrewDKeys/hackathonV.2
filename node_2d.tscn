@@ -97,6 +97,7 @@ offset_right = 294.0
 offset_bottom = 646.0
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 script = ExtResource("3_jqsx2")
 
