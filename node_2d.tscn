@@ -1,12 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dirro2cnypfg2"]
+[gd_scene load_steps=7 format=3 uid="uid://dirro2cnypfg2"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_8xo3w"]
 [ext_resource type="Script" path="res://addons/easy_velocity_vector_display/vectordisplay2D.gd" id="2_cfte3"]
+[ext_resource type="Script" path="res://block.gd" id="3_evutx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mfy2"]
 size = Vector2(40, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qt800"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_toq4f"]
 size = Vector2(40, 40)
 
 [node name="ROOT" type="Node2D"]
@@ -47,7 +51,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Playbox/Floor"]
 position = Vector2(20, 20)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qt800")
 
 [node name="Wall_Left" type="StaticBody2D" parent="Playbox"]
@@ -58,7 +61,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Playbox/Wall_Left"]
 position = Vector2(20, 20)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qt800")
 
 [node name="Wall_Right" type="StaticBody2D" parent="Playbox"]
@@ -69,7 +71,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Playbox/Wall_Right"]
 position = Vector2(20, 20)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qt800")
 
 [node name="Node2D" type="Node2D" parent="Playbox"]
@@ -97,3 +98,19 @@ offset_left = 292.0
 offset_top = 3.0
 offset_right = 294.0
 offset_bottom = 646.0
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(646, -113)
+script = ExtResource("3_evutx")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_toq4f")
+
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D"]
+offset_left = -20.0
+offset_top = -14.0
+offset_right = 20.0
+offset_bottom = 26.0
+color = Color(0.368627, 0.768627, 0.509804, 1)
