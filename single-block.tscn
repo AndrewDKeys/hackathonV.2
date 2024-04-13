@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://wfbisodw3ibo"]
+
+[ext_resource type="Script" path="res://single-block.gd" id="1_u3dx3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ln723"]
+size = Vector2(40, 40)
+
+[node name="ROOT" type="Node2D"]
+position = Vector2(0, 1)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(38, -16)
+script = ExtResource("1_u3dx3")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_ln723")
+
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(0.796078, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
