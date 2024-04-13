@@ -1,5 +1,42 @@
-[gd_scene format=3 uid="uid://dirro2cnypfg2"]
+[gd_scene load_steps=4 format=3 uid="uid://dirro2cnypfg2"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_8xo3w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mfy2"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qt800"]
+size = Vector2(40, 40)
 
 [node name="ROOT" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(334, 148)
+script = ExtResource("1_8xo3w")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_5mfy2")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+position = Vector2(-75, 624)
+scale = Vector2(33.35, 1.965)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Node2D/StaticBody2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.721569, 0.176471, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_qt800")
