@@ -11,7 +11,7 @@ size = Vector2(40, 40)
 [node name="ROOT" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(334, 148)
+position = Vector2(565, 553)
 script = ExtResource("1_8xo3w")
 metadata/_edit_group_ = true
 
@@ -24,19 +24,51 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_5mfy2")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Playbox" type="Node2D" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+[node name="Wall_Left" type="StaticBody2D" parent="Playbox"]
+position = Vector2(308, -207)
+rotation = 1.5708
+scale = Vector2(21.455, 7.705)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Playbox/Wall_Left"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0.486275, 0.243137, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playbox/Wall_Left"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_qt800")
+
+[node name="Wall_Right" type="StaticBody2D" parent="Playbox"]
+position = Vector2(1152, -182)
+rotation = 1.5708
+scale = Vector2(21.455, 7.705)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Playbox/Wall_Right"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0.486275, 0.243137, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playbox/Wall_Right"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_qt800")
+
+[node name="Floor" type="StaticBody2D" parent="Playbox"]
 position = Vector2(-75, 624)
 scale = Vector2(33.35, 1.965)
 metadata/_edit_group_ = true
 
-[node name="ColorRect" type="ColorRect" parent="Node2D/StaticBody2D"]
+[node name="ColorRect" type="ColorRect" parent="Playbox/Floor"]
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.721569, 0.176471, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playbox/Floor"]
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_qt800")
