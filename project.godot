@@ -23,6 +23,10 @@ window/stretch/mode="viewport"
 
 project/assembly_name="DEATHTRIS"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/easy_velocity_vector_display/plugin.cfg")
+
 [input]
 
 move_right={
