@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://power_ups/bomb.gd" id="1_vn6im"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8qc2l"]
-radius = 16.0
+radius = 20.025
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oi82b"]
 radius = 14.0

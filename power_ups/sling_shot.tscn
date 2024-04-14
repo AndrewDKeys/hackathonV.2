@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ba7otjwrq6cag"]
+[gd_scene load_steps=5 format=3 uid="uid://ba7otjwrq6cag"]
 
 [ext_resource type="Script" path="res://power_ups/sling_shot.gd" id="1_4qpf5"]
 [ext_resource type="Texture2D" uid="uid://d2e8bd16ydbuv" path="res://hackathon sprites/sling_shot.png" id="1_gfdmk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0sy3h"]
 size = Vector2(25, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgeeh"]
+size = Vector2(36, 39)
 
 [node name="SlingShot" type="Node2D"]
 script = ExtResource("1_4qpf5")
@@ -19,3 +22,11 @@ shape = SubResource("RectangleShape2D_0sy3h")
 position = Vector2(-2.38419e-07, 0)
 scale = Vector2(1.4375, 1.57292)
 texture = ExtResource("1_gfdmk")
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D"]
+position = Vector2(-1, 2.5)
+shape = SubResource("RectangleShape2D_lgeeh")
+
+[connection signal="body_entered" from="RigidBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
