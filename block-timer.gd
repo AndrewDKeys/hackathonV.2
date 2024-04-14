@@ -55,8 +55,12 @@ func _ready():
 	refactoring = false
 
 func _on_timeout():
+	randomize()
+	var chance = randi() % 2
 	if dropped_list.size() < 25 && not refactoring:
 		drop_block()
+	elif chance == 0:
+		carpet_bomb()
 	elif not refactoring:
 		refactor()
 	else:
@@ -89,3 +93,11 @@ func refactor():
 	for i in dropped_list:
 		i.queue_free()
 	dropped_list.clear()
+	
+func carpet_bomb():
+	randomize()
+	for i in range(5):
+		var tiny = single.instantiate()
+		tiny.set_global_position(Vector2(randf_range(375, 830), DROP_HEIGHT))
+		add_child(tiny)
+		dropped_list.append(tiny)
