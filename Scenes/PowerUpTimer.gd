@@ -2,7 +2,7 @@ extends Timer
 
 const DROP_HEIGHT = -100
 const POWER_UP_ODDS = 0.2
-const SUPER_POWER_UP_ODDS = 0.09
+const SUPER_POWER_UP_ODDS = 0.90
 
 var bubble = preload("res://power_ups/bubble.tscn")
 var bomb = preload("res://power_ups/bomb.tscn")

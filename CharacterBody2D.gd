@@ -43,7 +43,6 @@ func _ready():
 	get_parent().get_node("PowerUpTimer").connect("items_list", init_list)
 
 
-	
 func init_list(item) -> void:
 	if item != null:
 		item.connect("pick_me", do_item)
@@ -57,13 +56,13 @@ func list_logic(type):
 			my_items.append(type)
 
 func do_item(item) -> void:
-	var x = 0
+	var y = 0
 	for i in items_on_screen:
 		if i == item:
 			list_logic(item.item_type)
 			item.queue_free()
-			items_on_screen.remove_at(x)
-		x += 1
+			items_on_screen.remove_at(y)
+		y += 1
 # Physics process function for movement and actions
 func _physics_process(delta):
 	# Check for game over state
@@ -75,6 +74,19 @@ func _physics_process(delta):
 	else:
 		x = false
 		jump_count = 0
+		
+	
+	if Input.is_action_pressed("shift") and my_items.size() > 0:		
+		match my_items.pop_at(0):
+			"fc":
+				get_parent().get_node("Timer").refactor()	
+			"bomb":
+				pass
+			"bubble":
+				pass
+			"slingshot":
+				velocity = Vector2(facing * 600, -800)
+				x = true
 	
 	# Handle jump
 	if Input.is_action_just_pressed("jump") and jump_count < total_jumps:
@@ -121,18 +133,6 @@ func isDead():
 		
 	last_head = is_on_ceiling()	
 	last_floor = is_on_floor()
-
-func _input(event):
-	if event.is_action_pressed("shift") and my_items.size() > 0:		
-		match my_items.pop_at(0):
-			"fc":
-				get_parent().get_node("Timer").refactor()	
-			"bomb":
-				pass
-			"bubble":
-				pass
-			"slingshot":
-				pass
 
 func _on_area_2d_body_entered(body):
 	last_head = true

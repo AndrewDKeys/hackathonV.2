@@ -65,9 +65,9 @@ expand_mode = 1
 
 [node name="TryAgainButton" type="Button" parent="EndMenu/TextureRect"]
 layout_mode = 0
-offset_left = 375.0
+offset_left = 428.0
 offset_top = 497.0
-offset_right = 685.0
+offset_right = 738.0
 offset_bottom = 585.0
 theme_override_fonts/font = ExtResource("4_fcdcq")
 theme_override_font_sizes/font_size = 70

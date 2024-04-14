@@ -258,10 +258,10 @@ metadata/_edit_lock_ = true
 
 [node name="ColorRect6" type="ColorRect" parent="Playbox/Node2D/Node2D/ColorRect6"]
 layout_mode = 0
-offset_left = -27.0
-offset_top = -1070.0
-offset_right = 810.0
-offset_bottom = -574.0
+offset_left = -24.0067
+offset_top = -1071.0
+offset_right = 812.993
+offset_bottom = -574.998
 color = Color(0, 0, 0.105882, 1)
 
 [node name="ColorRect5" type="ColorRect" parent="Playbox/Node2D"]
@@ -323,6 +323,90 @@ z_index = 11
 position = Vector2(1064.4, 560.055)
 scale = Vector2(2.25598, 1.97055)
 texture = ExtResource("8_f2usm")
+
+[node name="ItemBlock" type="Node2D" parent="."]
+z_index = 100
+position = Vector2(1063, 367)
+scale = Vector2(2.25598, 1.97055)
+
+[node name="ColorRect" type="ColorRect" parent="ItemBlock"]
+offset_left = -78.0
+offset_top = -82.0
+offset_right = 7.0
+offset_bottom = -81.0
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="ItemBlock"]
+offset_left = -78.0
+offset_top = -163.703
+offset_right = 7.0
+offset_bottom = -162.703
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="ItemBlock"]
+offset_left = -78.0
+offset_top = -163.0
+offset_right = -77.0
+offset_bottom = -82.0
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="ItemBlock"]
+offset_left = 6.0
+offset_top = -163.0
+offset_right = 7.0
+offset_bottom = -81.0
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="ItemBlock"]
+offset_left = -76.2269
+offset_top = -181.045
+offset_right = 212.773
+offset_bottom = -165.045
+theme_override_fonts/font = ExtResource("6_o7b8b")
+text = "item"
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemBlock2" type="Node2D" parent="."]
+z_index = 100
+position = Vector2(1122, 424)
+scale = Vector2(1.4, 1.224)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="ItemBlock2"]
+offset_left = -78.0
+offset_top = -82.0
+offset_right = 7.0
+offset_bottom = -81.0
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="ItemBlock2"]
+offset_left = -78.0
+offset_top = -163.703
+offset_right = 7.0
+offset_bottom = -162.703
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="ItemBlock2"]
+offset_left = -78.0
+offset_top = -163.0
+offset_right = -77.0
+offset_bottom = -82.0
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="ItemBlock2"]
+offset_left = 6.0
+offset_top = -163.0
+offset_right = 7.0
+offset_bottom = -81.0
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
