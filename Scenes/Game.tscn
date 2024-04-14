@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://ckglbbwkvkqcj"]
+[gd_scene load_steps=21 format=3 uid="uid://ckglbbwkvkqcj"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_yxk7t"]
 [ext_resource type="Texture2D" uid="uid://bsxrbs28iiwxh" path="res://hackathon sprites/spritesheet white character.png" id="2_0bpd5"]
 [ext_resource type="Script" path="res://addons/easy_velocity_vector_display/vectordisplay2D.gd" id="2_mp1h7"]
 [ext_resource type="Script" path="res://block-timer.gd" id="3_u8xxb"]
+[ext_resource type="Script" path="res://Scenes/SCORE.gd" id="6_eyuuh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_og208"]
 size = Vector2(17.5, 41.3333)
@@ -171,7 +172,6 @@ color = Color(0, 0, 0.105882, 1)
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(564, 596)
-scale = Vector2(1.2, 1.2)
 script = ExtResource("1_yxk7t")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
@@ -292,6 +292,16 @@ wait_time = 5.0
 autostart = true
 script = ExtResource("3_u8xxb")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="SCORE" type="Node2D" parent="."]
+script = ExtResource("6_eyuuh")
+
+[node name="Score" type="Label" parent="SCORE"]
+z_index = 100
+offset_left = 29.0
+offset_top = 14.0
+offset_right = 617.0
+offset_bottom = 310.0
+theme_override_font_sizes/font_size = 20
+text = "xxxxx"
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
