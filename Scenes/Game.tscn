@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://ckglbbwkvkqcj"]
+[gd_scene load_steps=22 format=3 uid="uid://ckglbbwkvkqcj"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_yxk7t"]
 [ext_resource type="Texture2D" uid="uid://bsxrbs28iiwxh" path="res://hackathon sprites/spritesheet white character.png" id="2_0bpd5"]
 [ext_resource type="Script" path="res://addons/easy_velocity_vector_display/vectordisplay2D.gd" id="2_mp1h7"]
 [ext_resource type="Script" path="res://block-timer.gd" id="3_u8xxb"]
 [ext_resource type="Script" path="res://Scenes/SCORE.gd" id="6_eyuuh"]
+[ext_resource type="FontFile" uid="uid://cdro5d1cccky0" path="res://Minecraft.ttf" id="6_o7b8b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_og208"]
 size = Vector2(17.5, 41.3333)
@@ -297,11 +298,12 @@ script = ExtResource("6_eyuuh")
 
 [node name="Score" type="Label" parent="SCORE"]
 z_index = 100
-offset_left = 29.0
-offset_top = 14.0
-offset_right = 617.0
-offset_bottom = 310.0
-theme_override_font_sizes/font_size = 20
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 597.0
+offset_bottom = 305.0
+theme_override_fonts/font = ExtResource("6_o7b8b")
+theme_override_font_sizes/font_size = 30
 text = "xxxxx"
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

@@ -13,4 +13,3 @@ func _ready():
 func update_score(i) -> void:
 	score += i
 	$Score.text = "SCORE: " + str(score)
-	print(score)
