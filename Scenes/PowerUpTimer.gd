@@ -4,13 +4,11 @@ const POWER_UP_ODDS = 0.20
 const SUPER_POWER_UP_ODDS = 0.05
 
 var bubble
-var dash
 var bomb
 
 var triple_jump
 var full_clear
 var slingshot
-var permanent_dash
 
 var chance
 
@@ -32,7 +30,12 @@ func _on_timeout():
 		wait_time /= 2
 
 func gen_power_up():
-	pass
+	randomize()
+	var power_list = [bomb, bubble, bomb]
+	var power = power_list[randi() % power_list.size()]
+
 
 func gen_super_power_up():
-	pass
+	randomize()
+	var power_list = [triple_jump, full_clear, slingshot]
+	var power = power_list[randi() % power_list.size()]
