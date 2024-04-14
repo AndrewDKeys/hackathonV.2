@@ -101,5 +101,14 @@ Kaosi Nuel "
 horizontal_alignment = 1
 uppercase = true
 
+[node name="Label" type="Label" parent="EndMenu"]
+offset_left = 167.0
+offset_top = 16.0
+offset_right = 959.0
+offset_bottom = 216.0
+theme_override_fonts/font = ExtResource("4_fcdcq")
+theme_override_font_sizes/font_size = 200
+text = "GAME OVER"
+
 [connection signal="pressed" from="Main/TextureRect/StartButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="EndMenu/TextureRect/TryAgainButton" to="." method="_on_endMenu_pressed"]

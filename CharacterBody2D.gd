@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 signal gameover
+signal give_items
 
 const bomb = preload("res://power_ups/bomb.tscn")
 
@@ -26,8 +27,6 @@ var last_head
 var sound_player = AudioStreamPlayer.new()
 var bg_music = AudioStreamPlayer.new()
 
-
-
 # Reference to the AnimationTree node
 @onready var animation_tree = $AnimationTree
 
@@ -42,7 +41,6 @@ func _ready():
 	
 	get_parent().get_node("PowerUpTimer").connect("items_list", init_list)
 
-
 func init_list(item) -> void:
 	if item != null:
 		item.connect("pick_me", do_item)
@@ -54,6 +52,7 @@ func list_logic(type):
 			total_jumps +=1
 		else:
 			my_items.append(type)
+			emit_signal("give_items", my_items)	
 
 func do_item(item) -> void:
 	var y = 0
@@ -63,6 +62,7 @@ func do_item(item) -> void:
 			item.queue_free()
 			items_on_screen.remove_at(y)
 		y += 1
+		
 # Physics process function for movement and actions
 func _physics_process(delta):
 	# Check for game over state
@@ -75,7 +75,7 @@ func _physics_process(delta):
 		x = false
 		jump_count = 0
 		
-	
+	#its so bad pls love us mr ibm
 	if Input.is_action_pressed("shift") and my_items.size() > 0:		
 		match my_items.pop_at(0):
 			"fc":
@@ -87,6 +87,7 @@ func _physics_process(delta):
 			"slingshot":
 				velocity = Vector2(facing * 600, -800)
 				x = true
+	emit_signal("give_items", my_items)		#AWFUL CODE BUT WE HAVE NO TIMME!!!!!!!
 	
 	# Handle jump
 	if Input.is_action_just_pressed("jump") and jump_count < total_jumps:
