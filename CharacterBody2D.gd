@@ -20,9 +20,9 @@ func _ready():
 	sound_player.bus = "Player SFX"
 	add_child(sound_player) 
 	
-	#bg_music.stream = load("res://hackathon in progress.ogg")
-	#bg_music.autoplay = true
-	#add_child(bg_music)
+	bg_music.stream = load("res://hackathonBGM.ogg")
+	bg_music.autoplay = true
+	add_child(bg_music)
 
 func _physics_process(delta):
 	isDead()
