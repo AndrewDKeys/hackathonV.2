@@ -12,6 +12,18 @@ var facing = 1;
 var total_jumps = 2;
 var jump_count = 0;
 
+var sound_player = AudioStreamPlayer.new()
+var bg_music := AudioStreamPlayer.new()
+
+
+func _ready(): 
+	sound_player.bus = "Player SFX"
+	add_child(sound_player) 
+	
+	#bg_music.stream = load("res://hackathon in progress.ogg")
+	#bg_music.autoplay = true
+	#add_child(bg_music)
+
 func _physics_process(delta):
 	isDead()
 	# Add the gravity.
@@ -26,6 +38,10 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
 		
+		var sound_effect = load("res://sound effects/jump.wav")
+		sound_player.stream = sound_effect
+		sound_player.play()
+		
 	# Get the input direction and handle the movement/deceleration
 	if Input.is_action_just_pressed("shift"):
 		velocity = Vector2(facing * 720, -800)
@@ -38,8 +54,20 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	elif not x:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+		
+	#Determines when the player hits the ground
+	var was_in_air: bool = not is_on_floor()
 	
 	move_and_slide()
+		
+	var just_landed: bool = is_on_floor() and was_in_air
+	  
+	if just_landed:
+		var sound_effect = load("res://sound effects/landing.wav")
+		sound_player.stream = sound_effect
+		sound_player.play()    
+		
 	
 func isDead():
 	if is_on_ceiling():
