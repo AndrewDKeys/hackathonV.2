@@ -24,8 +24,10 @@ func _physics_process(delta):
 		jump_count += 1
 		
 	# Get the input direction and handle the movement/deceleration
-	
-	x = useItem()
+	if Input.is_action_just_pressed("shift"):
+		velocity = Vector2(facing * 720, -800)
+		x = true
+
 	
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
@@ -33,14 +35,15 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	elif not x:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
+	
 	move_and_slide()
 	
 func useItem() -> bool:
-	var x = false
+	var k = false
 	
 	if Input.is_action_just_pressed("shift"):
-		velocity = Vector2(facing * 720, -800)
-		x = true
 		
-	return x
+		k = true
+	
+	print(k)
+	return k
