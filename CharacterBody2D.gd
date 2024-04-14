@@ -81,18 +81,9 @@ func _physics_process(delta):
 	if is_on_floor() and was_in_air:
 		var sound_effect = load("res://sound effects/landing.wav")
 		sound_player.stream = sound_effect
-<<<<<<< HEAD
 		sound_player.play()
 		
 # Function to check if the character is dead
-=======
-		sound_player.play()    
-	
-func dodo() -> bool:
-	
-	return false
-
->>>>>>> refs/remotes/origin/asdfasdf
 func isDead():
 	if is_on_ceiling():
 		emit_signal("gameover")
