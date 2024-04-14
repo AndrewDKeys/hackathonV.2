@@ -78,6 +78,14 @@ position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_dhu35")
 
 [node name="Node2D" type="Node2D" parent="Playbox"]
+z_index = 5
+
+[node name="ColorRect5" type="ColorRect" parent="Playbox/Node2D"]
+offset_left = 291.0
+offset_top = -258.0
+offset_right = 864.0
+offset_bottom = 4.0
+color = Color(0, 0, 0.105882, 1)
 
 [node name="ColorRect" type="ColorRect" parent="Playbox/Node2D"]
 offset_left = 293.0

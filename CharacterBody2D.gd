@@ -67,8 +67,11 @@ func _physics_process(delta):
 		var sound_effect = load("res://sound effects/landing.wav")
 		sound_player.stream = sound_effect
 		sound_player.play()    
-		
 	
+func dodo() -> bool:
+	
+	return false
+
 func isDead():
 	if is_on_ceiling():
 		emit_signal("gameover")
