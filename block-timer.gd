@@ -69,6 +69,7 @@ func drop_block():
 	var block = dropped.instantiate()
 	block.set_global_position(Vector2(randf_range(375, 830), DROP_HEIGHT))
 	add_child(block)
+	
 	dropped_list.append(block)
 	update()
 	send_score(map[dropped])

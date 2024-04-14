@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqo43c3se2gu6"
-path="res://.godot/imported/controls.png-6abccb851cb1704ad148d6f9536f095f.ctex"
+uid="uid://dub30d5vdjnsx"
+path="res://.godot/imported/bubble.png-22d5a69eae291faedf6dc25f7eb26a78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hackathon sprites/controls.png"
-dest_files=["res://.godot/imported/controls.png-6abccb851cb1704ad148d6f9536f095f.ctex"]
+source_file="res://hackathon sprites/bubble.png"
+dest_files=["res://.godot/imported/bubble.png-22d5a69eae291faedf6dc25f7eb26a78.ctex"]
 
 [params]
 

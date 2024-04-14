@@ -55,9 +55,7 @@ func _physics_process(delta):
 		sound_player.play()
 	
 	# Handle dash (shift action)
-	if Input.is_action_just_pressed("shift"):
-		velocity = Vector2(facing * 720, -800)
-		x = true
+	
 	
 	# Get the input direction and handle movement
 	var direction = Input.get_axis("move_left", "move_right")
@@ -95,3 +93,11 @@ func isDead():
 		
 	last_head = is_on_ceiling()	
 	last_floor = is_on_floor()
+
+func update_item():
+	if Input.is_action_just_pressed("shift"):
+		velocity = Vector2(facing * 720, -800)
+		x = true
+
+func _on_area_2d_body_entered(body):
+	last_head = true

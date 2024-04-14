@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ckglbbwkvkqcj"]
+[gd_scene load_steps=25 format=3 uid="uid://ckglbbwkvkqcj"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_yxk7t"]
 [ext_resource type="Texture2D" uid="uid://bsxrbs28iiwxh" path="res://hackathon sprites/spritesheet white character.png" id="2_0bpd5"]
@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scenes/SCORE.gd" id="6_eyuuh"]
 [ext_resource type="FontFile" uid="uid://cdro5d1cccky0" path="res://Minecraft.ttf" id="6_o7b8b"]
 [ext_resource type="Script" path="res://Scenes/PowerUpTimer.gd" id="7_lbkb0"]
-[ext_resource type="Texture2D" uid="uid://dqo43c3se2gu6" path="res://hackathon sprites/controls.png" id="8_hi6mq"]
+[ext_resource type="Texture2D" uid="uid://b42hgtt6o1ciw" path="res://hackathon sprites/controlsr.png" id="8_f2usm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_og208"]
 size = Vector2(17.5, 44.9)
@@ -161,6 +161,9 @@ states/walk/node = SubResource("AnimationNodeBlendSpace1D_frb5m")
 states/walk/position = Vector2(471, 98)
 transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition_rtmov")]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6g37"]
+size = Vector2(17, 17)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhu35"]
 size = Vector2(40, 40)
 
@@ -175,8 +178,9 @@ color = Color(0, 0, 0.105882, 1)
 metadata/_edit_lock_ = true
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(491, 566)
+position = Vector2(459, 603)
 script = ExtResource("1_yxk7t")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(1.73334, 11.4)
@@ -189,7 +193,6 @@ position = Vector2(-0.0999756, 16.45)
 shape = SubResource("RectangleShape2D_og208")
 
 [node name="VectorDisplay2D" type="Node2D" parent="Player"]
-visible = false
 position = Vector2(-0.266663, -0.0999756)
 scale = Vector2(0.665, 0.665)
 script = ExtResource("2_mp1h7")
@@ -208,6 +211,12 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_v0o47")
 anim_player = NodePath("../AnimationPlayer")
 parameters/walk/blend_position = 0.160465
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="Head" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_f6g37")
 
 [node name="Playbox" type="Node2D" parent="."]
 
@@ -321,7 +330,8 @@ script = ExtResource("7_lbkb0")
 z_index = 11
 position = Vector2(1064.4, 560.055)
 scale = Vector2(2.25598, 1.97055)
-texture = ExtResource("8_hi6mq")
+texture = ExtResource("8_f2usm")
 
+[connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
 [connection signal="timeout" from="PowerUpTimer" to="PowerUpTimer" method="_on_timeout"]

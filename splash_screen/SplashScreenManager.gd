@@ -26,9 +26,6 @@ func _ready() -> void:
 	set_process_input(true)
 
 
-func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_skip"):
-		_skip()
 
 
 func _start_splash_screen() -> void:
@@ -40,6 +37,3 @@ func _start_splash_screen() -> void:
 		splash_screen.connect("finished", _start_splash_screen)
 
 
-func _skip() -> void:
-	_splash_screen_container.get_child(0).queue_free()
-	_start_splash_screen()
