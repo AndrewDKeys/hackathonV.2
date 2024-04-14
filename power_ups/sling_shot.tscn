@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba7otjwrq6cag"]
+[gd_scene load_steps=4 format=3 uid="uid://ba7otjwrq6cag"]
 
+[ext_resource type="Script" path="res://power_ups/sling_shot.gd" id="1_4qpf5"]
 [ext_resource type="Texture2D" uid="uid://d2e8bd16ydbuv" path="res://hackathon sprites/sling_shot.png" id="1_gfdmk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0sy3h"]
 size = Vector2(25, 31)
 
 [node name="SlingShot" type="Node2D"]
+script = ExtResource("1_4qpf5")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 

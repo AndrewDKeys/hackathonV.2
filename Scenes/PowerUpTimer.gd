@@ -1,7 +1,7 @@
 extends Timer
 
 const DROP_HEIGHT = -70
-const POWER_UP_ODDS = 0.20
+const POWER_UP_ODDS = 1
 const SUPER_POWER_UP_ODDS = 0.10
 
 var bubble = preload("res://power_ups/bubble.tscn")
@@ -15,16 +15,16 @@ var chance
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	wait_time = 12
+	wait_time = 1
 
 func _on_timeout():
 	randomize()
 	chance = randf() # creates a num 0.0 - 1.0
 	if chance <= SUPER_POWER_UP_ODDS:
-		wait_time = 12
+		wait_time = 1
 		gen_super_power_up()
 	elif chance <= POWER_UP_ODDS:
-		wait_time = 12
+		wait_time = 1
 		gen_power_up()
 	else:
 		wait_time /= 2

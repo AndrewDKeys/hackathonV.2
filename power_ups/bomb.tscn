@@ -1,13 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqibfo6b5wdn7"]
+[gd_scene load_steps=5 format=3 uid="uid://dqibfo6b5wdn7"]
 
 [ext_resource type="Texture2D" uid="uid://1f7twnuuyani" path="res://hackathon sprites/bomb.png" id="1_igujl"]
+[ext_resource type="Script" path="res://power_ups/bomb.gd" id="1_vn6im"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8qc2l"]
+radius = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oi82b"]
 radius = 14.0
 
 [node name="Bomb" type="Node2D"]
+script = ExtResource("1_vn6im")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D"]
+shape = SubResource("CircleShape2D_8qc2l")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 scale = Vector2(1.73438, 1.73438)
@@ -15,3 +25,5 @@ texture = ExtResource("1_igujl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_oi82b")
+
+[connection signal="body_entered" from="RigidBody2D/Area2D" to="." method="_on_area_2d_body_entered"]

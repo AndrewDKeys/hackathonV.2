@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 signal gameover
 
+const bomb = preload("res://power_ups/bomb.tscn")
+
+
 # Constants
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
@@ -32,7 +35,13 @@ func _ready():
 	bg_music.stream = load("res://hackathonBGM.ogg")
 	bg_music.autoplay = true
 	add_child(bg_music)
+	
+	bomb.connect("pick_me", do_item)
 
+func do_item(type) -> void:
+	
+	print(type)
+	
 # Physics process function for movement and actions
 func _physics_process(delta):
 	# Check for game over state
@@ -65,7 +74,7 @@ func _physics_process(delta):
 		# Set the blend position for the walk BlendSpace1D based on the facing direction
 		animation_tree.set("parameters/walk/blend_position", facing)
 	elif not x:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	#Don't move this it has to stay here to work
 	var was_in_air = not is_on_floor()
