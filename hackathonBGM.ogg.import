@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/hackathonBGM.ogg-c63730b6decc32e42f1e142bacd9
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

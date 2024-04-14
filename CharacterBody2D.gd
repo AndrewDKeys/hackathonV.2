@@ -65,15 +65,17 @@ func _physics_process(delta):
 	elif not x:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 	
+	#Don't move this it has to stay here to work
+	var was_in_air = not is_on_floor()
+	
 	# Move and slide
 	move_and_slide()
 	
 	# Play landing sound effect
-	var was_in_air = not is_on_floor()
 	if is_on_floor() and was_in_air:
 		var sound_effect = load("res://sound effects/landing.wav")
 		sound_player.stream = sound_effect
-		sound_player.play()
+		sound_player.play()	
 		
 # Function to check if the character is dead
 func isDead():
