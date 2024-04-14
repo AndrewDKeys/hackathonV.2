@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal gameover
+
 # Get the gravity from the project settings to be synced with RigidBody 
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
@@ -11,6 +13,7 @@ var total_jumps = 2;
 var jump_count = 0;
 
 func _physics_process(delta):
+	isDead()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += (1580) * delta
@@ -38,12 +41,6 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
-func useItem() -> bool:
-	var k = false
-	
-	if Input.is_action_just_pressed("shift"):
-		
-		k = true
-	
-	print(k)
-	return k
+func isDead():
+	if is_on_ceiling():
+		emit_signal("gameover")
