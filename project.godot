@@ -52,7 +52,7 @@ shift={
 
 [physics]
 
-2d/default_gravity=200.0
+2d/default_gravity=300.0
 
 [rendering]
 
