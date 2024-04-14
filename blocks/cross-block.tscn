@@ -19,7 +19,7 @@ offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
-color = Color(0.964706, 1, 0.74902, 1)
+color = Color(1, 0.301961, 0.301961, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="RigidBody2D2" type="RigidBody2D" parent="."]
@@ -35,7 +35,7 @@ offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
-color = Color(0.964706, 1, 0.74902, 1)
+color = Color(1, 0.301961, 0.301961, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="RigidBody2D3" type="RigidBody2D" parent="."]
@@ -51,7 +51,7 @@ offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
-color = Color(0.964706, 1, 0.74902, 1)
+color = Color(1, 0.301961, 0.301961, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="RigidBody2D4" type="RigidBody2D" parent="."]
@@ -67,7 +67,7 @@ offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
-color = Color(0.964706, 1, 0.74902, 1)
+color = Color(1, 0.301961, 0.301961, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="RigidBody2D5" type="RigidBody2D" parent="."]
@@ -83,5 +83,5 @@ offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
-color = Color(0.964706, 1, 0.74902, 1)
+color = Color(1, 0.301961, 0.301961, 1)
 metadata/_edit_use_anchors_ = true
