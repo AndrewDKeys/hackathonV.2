@@ -98,6 +98,7 @@ offset_bottom = 646.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
+autostart = true
 script = ExtResource("3_jqsx2")
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
