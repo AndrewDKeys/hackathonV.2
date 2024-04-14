@@ -16,7 +16,7 @@ func create_game():
 	add_child(gameInstance)
 	gameInstance.get_node("Player").connect("gameover", handle_gameover) 	
 	
-func handle_Mainmenu(MenuType) -> void:
+func handle_Mainmenu() -> void:
 	$Main.visible = false
 	create_game()
 	
@@ -27,7 +27,7 @@ func handle_gameover() -> void:
 	get_tree().paused = false
 
 func _on_button_pressed():
-	handle_Mainmenu($Main)
+	handle_Mainmenu()
 
 func _on_endMenu_pressed():
 	$EndMenu.visible = false

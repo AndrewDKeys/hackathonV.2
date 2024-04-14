@@ -101,4 +101,3 @@ func update_item():
 
 func _on_area_2d_body_entered(body):
 	last_head = true
-	pass # Replace with function body.
