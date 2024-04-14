@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_5ack6"]
 [ext_resource type="Texture2D" uid="uid://nubx6e7am732" path="res://hackathon sprites/Manick_StudionsPNG.png" id="2_xp2y3"]
-[ext_resource type="Texture2D" uid="uid://32dxr7e6ae0u" path="res://GameHome.png" id="3_8jtlf"]
+[ext_resource type="Texture2D" uid="uid://bancmhu6c71tx" path="res://Blockade_Title.png" id="3_cnwjc"]
 [ext_resource type="FontFile" uid="uid://bgy5wir545d11" path="res://Born2bSportyV2.ttf" id="4_fcdcq"]
 [ext_resource type="Texture2D" uid="uid://c081b7y4fwt4u" path="res://GameOverImg.png" id="5_sd8ii"]
 
@@ -42,7 +42,7 @@ sprite_frames = SubResource("SpriteFrames_uobx7")
 [node name="TextureRect" type="TextureRect" parent="Main"]
 offset_right = 1156.0
 offset_bottom = 672.0
-texture = ExtResource("3_8jtlf")
+texture = ExtResource("3_cnwjc")
 expand_mode = 1
 
 [node name="StartButton" type="Button" parent="Main/TextureRect"]
