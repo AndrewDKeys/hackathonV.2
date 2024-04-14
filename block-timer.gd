@@ -2,6 +2,8 @@ extends Timer
 
 const DROP_HEIGHT = -50
 
+signal score_update
+
 var single = preload("res://blocks/single-block.tscn")
 var cross = preload("res://blocks/cross-block.tscn")
 var left_l = preload("res://blocks/left-l-block.tscn")
@@ -12,6 +14,19 @@ var line_block = preload("res://blocks/line-block.tscn")
 var cage_block = preload("res://blocks/cage-block.tscn")
 var t_block = preload("res://blocks/t-block.tscn")
 var square_block = preload("res://blocks/square-block.tscn")
+
+var map = {
+	single: 5,
+	left_l: 20,
+	right_l:20,
+	s_block: 10,
+	z_block: 10,
+	line_block: 25,
+	cage_block: 40,
+	t_block: 15,
+	square_block: 10,
+	cross: 66 #6
+}
 
 var block_count # Used to help calculate score and rounds
 var round_number
@@ -58,6 +73,7 @@ func drop_block():
 	add_child(block)
 	dropped_list.append(block)
 	update()
+	send_score(map[dropped])
 
 func update():
 	block_count += 1
@@ -66,6 +82,9 @@ func update():
 		if round_number % 2 == 0 && wait_time > 0.25: # on even rounds the wait time will go down
 			wait_time -= 0.01 * round_number
 		block_count = 0
+
+func send_score(i):
+	emit_signal("score_update", i)
 
 func refactor():
 	for i in dropped_list:
