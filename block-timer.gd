@@ -2,16 +2,16 @@ extends Timer
 
 const DROP_HEIGHT = -50
 
-var single = preload("res://single-block.tscn")
-var cross = preload("res://cross-block.tscn")
-var left_l = preload("res://left-l-block.tscn")
-var right_l = preload("res://right-l-block.tscn")
-var s_block = preload("res://s-block.tscn")
-var z_block = preload("res://z-block.tscn")
-var line_block = preload("res://line-block.tscn")
-var cage_block = preload("res://cage-block.tscn")
-var t_block = preload("res://t-block.tscn")
-var square_block = preload("res://square-block.tscn")
+var single = preload("res://blocks/single-block.tscn")
+var cross = preload("res://blocks/cross-block.tscn")
+var left_l = preload("res://blocks/left-l-block.tscn")
+var right_l = preload("res://blocks/right-l-block.tscn")
+var s_block = preload("res://blocks/s-block.tscn")
+var z_block = preload("res://blocks/z-block.tscn")
+var line_block = preload("res://blocks/line-block.tscn")
+var cage_block = preload("res://blocks/cage-block.tscn")
+var t_block = preload("res://blocks/t-block.tscn")
+var square_block = preload("res://blocks/square-block.tscn")
 
 func _ready():
 	wait_time = 1
