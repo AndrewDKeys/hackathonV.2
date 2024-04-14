@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ckglbbwkvkqcj"]
+[gd_scene load_steps=23 format=3 uid="uid://ckglbbwkvkqcj"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_yxk7t"]
 [ext_resource type="Texture2D" uid="uid://bsxrbs28iiwxh" path="res://hackathon sprites/spritesheet white character.png" id="2_0bpd5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://block-timer.gd" id="3_u8xxb"]
 [ext_resource type="Script" path="res://Scenes/SCORE.gd" id="6_eyuuh"]
 [ext_resource type="FontFile" uid="uid://cdro5d1cccky0" path="res://Minecraft.ttf" id="6_o7b8b"]
+[ext_resource type="Script" path="res://Scenes/PowerUpTimer.gd" id="7_lbkb0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_og208"]
 size = Vector2(17.5, 41.3333)
@@ -251,6 +252,7 @@ offset_bottom = -268.0
 color = Color(0, 0, 0.105882, 1)
 
 [node name="ColorRect6" type="ColorRect" parent="Playbox/Node2D/Node2D/ColorRect6"]
+layout_mode = 0
 offset_left = -27.0
 offset_top = -1070.0
 offset_right = 810.0
@@ -306,4 +308,9 @@ theme_override_fonts/font = ExtResource("6_o7b8b")
 theme_override_font_sizes/font_size = 30
 text = "xxxxx"
 
+[node name="PowerUpTimer" type="Timer" parent="."]
+autostart = true
+script = ExtResource("7_lbkb0")
+
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
+[connection signal="timeout" from="PowerUpTimer" to="PowerUpTimer" method="_on_timeout"]
