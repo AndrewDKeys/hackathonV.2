@@ -58,8 +58,8 @@ func _physics_process(delta):
 	# Get the input direction and handle movement
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
+		facing = direction
 		velocity.x = direction * SPEED
-		
 		# Set the blend position for the walk BlendSpace1D based on the facing direction
 		animation_tree.set("parameters/walk/blend_position", facing)
 	elif not x:
