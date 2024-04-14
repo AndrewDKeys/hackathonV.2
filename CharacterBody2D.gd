@@ -3,7 +3,7 @@ extends CharacterBody2D
 signal gameover
 signal give_items
 
-const bomb = preload("res://power_ups/bomb.tscn")
+
 
 # Constants
 const SPEED = 300.0
