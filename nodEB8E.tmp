@@ -13,10 +13,10 @@ offset_bottom = 648.0
 color = Color(0, 0, 0.105882, 1)
 
 [node name="Button" type="Button" parent="Main"]
-offset_left = 414.0
-offset_top = 245.0
-offset_right = 717.0
-offset_bottom = 392.0
+offset_left = 317.0
+offset_top = 118.0
+offset_right = 850.0
+offset_bottom = 459.0
 text = "Start"
 
 [connection signal="pressed" from="Main/Button" to="." method="_on_button_pressed"]
