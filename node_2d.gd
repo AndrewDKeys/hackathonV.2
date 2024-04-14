@@ -1,25 +1,31 @@
 extends Node2D
 
-var game = preload("res://Scenes/Game.tscn")
+const game = preload("res://Scenes/Game.tscn")
+var gameInstance
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$EndMenu.visible = false
 	pass
-	
+
 func create_game():
-	var thisgame = game.instantiate()
-	add_child(thisgame)
+	gameInstance = game.instantiate()
+	add_child(gameInstance)
+	gameInstance.get_node("Player").connect("gameover", handle_gameover) 	
 	
-	thisgame.get_node("Player").connect("gameover", handle_gameover) 	
-	
-func handle_Mainmenu() -> void:
-	$Main.queue_free()
+func handle_Mainmenu(MenuType) -> void:
+	$Main.visible = false
 	create_game()
 	
 func handle_gameover() -> void:
 	get_tree().paused = true
-	print("DEAD")
-
+	gameInstance.queue_free()
+	$EndMenu.visible = true
+	get_tree().paused = false
 
 func _on_button_pressed():
-	handle_Mainmenu()
+	handle_Mainmenu($Main)
+
+func _on_endMenu_pressed():
+	$EndMenu.visible = false
+	create_game()
