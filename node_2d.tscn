@@ -38,7 +38,6 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_uobx7")
 
 [node name="Main" type="Node2D" parent="."]
-visible = false
 
 [node name="TextureRect" type="TextureRect" parent="Main"]
 offset_right = 1156.0
@@ -65,6 +64,7 @@ texture = ExtResource("5_sd8ii")
 expand_mode = 1
 
 [node name="TryAgainButton" type="Button" parent="EndMenu/TextureRect"]
+layout_mode = 0
 offset_left = 375.0
 offset_top = 497.0
 offset_right = 685.0
