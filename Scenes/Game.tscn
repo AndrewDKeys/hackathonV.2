@@ -178,8 +178,9 @@ color = Color(0, 0, 0.105882, 1)
 metadata/_edit_lock_ = true
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(491, 566)
+position = Vector2(459, 603)
 script = ExtResource("1_yxk7t")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(1.73334, 11.4)

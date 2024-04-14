@@ -17,7 +17,6 @@ var chance
 func _ready():
 	wait_time = 12
 
-
 func _on_timeout():
 	randomize()
 	chance = randf() # creates a num 0.0 - 1.0
