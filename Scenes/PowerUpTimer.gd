@@ -2,7 +2,7 @@ extends Timer
 
 const DROP_HEIGHT = -70
 const POWER_UP_ODDS = 0.20
-const SUPER_POWER_UP_ODDS = 1.0
+const SUPER_POWER_UP_ODDS = 0.05
 
 var bubble
 var bomb
