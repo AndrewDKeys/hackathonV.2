@@ -3,30 +3,29 @@
 [ext_resource type="Texture2D" uid="uid://d2vqf6b6771b6" path="res://hackathon sprites/triple_jump.png" id="1_s72lf"]
 [ext_resource type="Script" path="res://power_ups/triple_jump.gd" id="1_wbccm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3iqdl"]
-size = Vector2(31, 37)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8yanc"]
+size = Vector2(40, 41)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cln6k"]
-size = Vector2(47, 49)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3iqdl"]
+size = Vector2(34, 35.5)
 
 [node name="TripleJump" type="Node2D"]
 script = ExtResource("1_wbccm")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_8yanc")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 scale = Vector2(1.83333, 1.93056)
 texture = ExtResource("1_s72lf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(0.5, 2.5)
+position = Vector2(0, -0.25)
 shape = SubResource("RectangleShape2D_3iqdl")
-
-[node name="Area2D" type="Area2D" parent="RigidBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D"]
-position = Vector2(0.5, 2.5)
-shape = SubResource("RectangleShape2D_cln6k")
 
 [connection signal="body_entered" from="RigidBody2D/Area2D" to="." method="_on_area_2d_body_entered"]

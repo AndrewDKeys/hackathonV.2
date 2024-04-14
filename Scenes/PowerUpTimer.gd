@@ -1,8 +1,8 @@
 extends Timer
 
-const DROP_HEIGHT = -70
-const POWER_UP_ODDS = 1
-const SUPER_POWER_UP_ODDS = 0.10
+const DROP_HEIGHT = -100
+const POWER_UP_ODDS = 0.2
+const SUPER_POWER_UP_ODDS = 0.09
 
 var bubble = preload("res://power_ups/bubble.tscn")
 var bomb = preload("res://power_ups/bomb.tscn")
@@ -22,7 +22,7 @@ func _ready():
 func _on_timeout():
 	randomize()
 	chance = randf() # creates a num 0.0 - 1.0
-	if chance <= SUPER_POWER_UP_ODDS:
+	if chance >= SUPER_POWER_UP_ODDS:
 		wait_time = 12
 		gen_super_power_up()
 	elif chance <= POWER_UP_ODDS:
@@ -46,5 +46,5 @@ func gen_super_power_up():
 	var random = power_list[randi() % power_list.size()]
 	var power = random.instantiate()
 	power.set_global_position(Vector2(randf_range(375, 830), DROP_HEIGHT))
-	emit_signal("item_list", power)
+	emit_signal("items_list", power)
 	add_child(power)

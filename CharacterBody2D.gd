@@ -9,6 +9,9 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 const WALL_SLIDE_VELOCITY = 130.0
 
+var items_on_screen = []
+var my_items = []
+
 # Variables
 var x = false
 var facing = 1
@@ -23,8 +26,7 @@ var last_head
 var sound_player = AudioStreamPlayer.new()
 var bg_music = AudioStreamPlayer.new()
 
-var items_on_screen = []
-var my_items = []
+
 
 # Reference to the AnimationTree node
 @onready var animation_tree = $AnimationTree
@@ -47,10 +49,18 @@ func init_list(item) -> void:
 		item.connect("pick_me", do_item)
 		items_on_screen.append(item)
 
+func list_logic(type):
+	if not my_items.size() >= 2:
+		if type == "jump3" and total_jumps < 5:
+			total_jumps +=1
+		else:
+			my_items.append(type)
+
 func do_item(item) -> void:
 	var x = 0
 	for i in items_on_screen:
 		if i == item:
+			list_logic(item.item_type)
 			item.queue_free()
 			items_on_screen.remove_at(x)
 		x += 1
@@ -75,9 +85,6 @@ func _physics_process(delta):
 		sound_player.stream = sound_effect
 		sound_player.play()
 	
-	# Handle dash (shift action)
-	
-	
 	# Get the input direction and handle movement
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
@@ -100,9 +107,6 @@ func _physics_process(delta):
 		sound_player.stream = sound_effect
 		sound_player.play()	
 
-
-	
-
 # Function to check if the character is dead
 func isDead():
 	if first:
@@ -118,10 +122,17 @@ func isDead():
 	last_head = is_on_ceiling()	
 	last_floor = is_on_floor()
 
-func update_item():
-	if Input.is_action_just_pressed("shift"):
-		velocity = Vector2(facing * 720, -800)
-		x = true
+func _input(event):
+	if event.is_action_pressed("shift") and my_items.size() > 0:		
+		match my_items.pop_at(0):
+			"fc":
+				get_parent().get_node("Timer").refactor()	
+			"bomb":
+				pass
+			"bubble":
+				pass
+			"slingshot":
+				pass
 
 func _on_area_2d_body_entered(body):
 	last_head = true
