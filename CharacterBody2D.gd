@@ -13,6 +13,10 @@ var facing = 1
 var total_jumps = 2
 var jump_count = 0
 
+var first = true
+var last_floor
+var last_head
+
 # Audio players
 var sound_player = AudioStreamPlayer.new()
 var bg_music = AudioStreamPlayer.new()
@@ -76,8 +80,18 @@ func _physics_process(delta):
 		var sound_effect = load("res://sound effects/landing.wav")
 		sound_player.stream = sound_effect
 		sound_player.play()	
-		
+
 # Function to check if the character is dead
 func isDead():
-	if is_on_ceiling():
-		emit_signal("gameover")
+	if first:
+		first = false
+	else:
+		if last_floor and is_on_ceiling():
+			emit_signal("gameover")
+		if is_on_floor() and is_on_ceiling():
+			emit_signal("gameover")
+		if is_on_floor() and last_head:
+			emit_signal("gameover")
+		
+	last_head = is_on_ceiling()	
+	last_floor = is_on_floor()

@@ -54,7 +54,6 @@ func _ready():
 	wait_time = 2
 	refactoring = false
 
-	
 func _on_timeout():
 	if dropped_list.size() < 25 && not refactoring:
 		drop_block()
@@ -62,7 +61,6 @@ func _on_timeout():
 		refactor()
 	else:
 		pass
-
 
 func drop_block():
 	randomize()
@@ -80,7 +78,7 @@ func update():
 	if block_count == round_procedure[round_number]:
 		round_number += 1
 		if round_number % 2 == 0 && wait_time > 0.25: # on even rounds the wait time will go down
-			wait_time -= 0.01 * round_number
+			wait_time -= 0.03 * round_number
 		block_count = 0
 
 func send_score(i):

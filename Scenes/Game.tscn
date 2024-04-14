@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dqo43c3se2gu6" path="res://hackathon sprites/controls.png" id="8_hi6mq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_og208"]
-size = Vector2(17.5, 41.3333)
+size = Vector2(17.5, 44.9)
 
 [sub_resource type="Animation" id="Animation_juemc"]
 length = 0.001
@@ -175,21 +175,18 @@ color = Color(0, 0, 0.105882, 1)
 metadata/_edit_lock_ = true
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(561, 601)
+position = Vector2(491, 566)
 script = ExtResource("1_yxk7t")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(1.73334, 11.4)
 scale = Vector2(3.46667, 3.425)
 texture = ExtResource("2_0bpd5")
 hframes = 23
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-0.0999622, 18.2333)
+position = Vector2(-0.0999756, 16.45)
 shape = SubResource("RectangleShape2D_og208")
-metadata/_edit_group_ = true
 
 [node name="VectorDisplay2D" type="Node2D" parent="Player"]
 position = Vector2(-0.266663, -0.0999756)
@@ -197,7 +194,6 @@ scale = Vector2(0.665, 0.665)
 script = ExtResource("2_mp1h7")
 target = NodePath("..")
 target_property = "velocity"
-metadata/_edit_group_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 libraries = {
