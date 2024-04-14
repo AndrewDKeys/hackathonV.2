@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dirro2cnypfg2"]
+[gd_scene load_steps=7 format=3 uid="uid://dirro2cnypfg2"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_5ack6"]
 [ext_resource type="Texture2D" uid="uid://nubx6e7am732" path="res://hackathon sprites/Manick_StudionsPNG.png" id="2_xp2y3"]
 [ext_resource type="Texture2D" uid="uid://32dxr7e6ae0u" path="res://GameHome.png" id="3_8jtlf"]
 [ext_resource type="FontFile" uid="uid://bgy5wir545d11" path="res://Born2bSportyV2.ttf" id="4_fcdcq"]
+[ext_resource type="Texture2D" uid="uid://ba6683r0o25lr" path="res://GameOverScreen.png" id="5_2aywt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uobx7"]
 animations = [{
@@ -20,13 +21,11 @@ animations = [{
 script = ExtResource("1_5ack6")
 
 [node name="Background" type="ColorRect" parent="."]
-visible = false
 offset_right = 1153.0
 offset_bottom = 650.0
 color = Color(0, 0, 0.105882, 1)
 
 [node name="Logo" type="Node2D" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Logo"]
 offset_right = 1155.0
@@ -47,6 +46,7 @@ texture = ExtResource("3_8jtlf")
 expand_mode = 1
 
 [node name="StartButton" type="Button" parent="Main/TextureRect"]
+layout_mode = 0
 offset_left = 372.0
 offset_top = 557.0
 offset_right = 805.0
@@ -56,21 +56,21 @@ theme_override_font_sizes/font_size = 58
 text = "PLAY"
 
 [node name="EndMenu" type="Node2D" parent="."]
-visible = false
 
-[node name="ColorRect" type="ColorRect" parent="EndMenu"]
-offset_left = 342.0
-offset_top = 149.0
-offset_right = 796.0
-offset_bottom = 445.0
-color = Color(0.0431373, 0.0509804, 0.0705882, 1)
+[node name="TextureRect" type="TextureRect" parent="EndMenu"]
+offset_right = 1156.0
+offset_bottom = 672.0
+texture = ExtResource("5_2aywt")
+expand_mode = 1
 
-[node name="Button" type="Button" parent="EndMenu"]
-offset_left = 491.0
-offset_top = 239.0
-offset_right = 644.0
-offset_bottom = 327.0
+[node name="TryAgainButton" type="Button" parent="EndMenu/TextureRect"]
+offset_left = 416.0
+offset_top = 309.0
+offset_right = 726.0
+offset_bottom = 397.0
+theme_override_fonts/font = ExtResource("4_fcdcq")
+theme_override_font_sizes/font_size = 70
 text = "Try Again?"
 
 [connection signal="pressed" from="Main/TextureRect/StartButton" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="EndMenu/Button" to="." method="_on_endMenu_pressed"]
+[connection signal="pressed" from="EndMenu/TextureRect/TryAgainButton" to="." method="_on_endMenu_pressed"]
