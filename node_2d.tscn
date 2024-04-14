@@ -12,11 +12,28 @@ offset_right = 1153.0
 offset_bottom = 648.0
 color = Color(0, 0, 0.105882, 1)
 
-[node name="Button" type="Button" parent="Main"]
-offset_left = 414.0
-offset_top = 245.0
-offset_right = 717.0
-offset_bottom = 392.0
-text = "Start"
+[node name="StartButton" type="Button" parent="Main"]
+offset_left = 378.0
+offset_top = 150.0
+offset_right = 754.0
+offset_bottom = 511.0
+text = "START"
 
-[connection signal="pressed" from="Main/Button" to="." method="_on_button_pressed"]
+[node name="EndMenu" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="EndMenu"]
+offset_left = 342.0
+offset_top = 149.0
+offset_right = 796.0
+offset_bottom = 445.0
+color = Color(0.0431373, 0.0509804, 0.0705882, 1)
+
+[node name="Button" type="Button" parent="EndMenu"]
+offset_left = 491.0
+offset_top = 239.0
+offset_right = 644.0
+offset_bottom = 327.0
+text = "YBTT"
+
+[connection signal="pressed" from="Main/StartButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="EndMenu/Button" to="." method="_on_endMenu_pressed"]
