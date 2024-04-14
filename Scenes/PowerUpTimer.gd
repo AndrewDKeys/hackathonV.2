@@ -4,8 +4,8 @@ const DROP_HEIGHT = -70
 const POWER_UP_ODDS = 0.20
 const SUPER_POWER_UP_ODDS = 0.10
 
-var bubble
-var bomb
+var bubble = preload("res://power_ups/bubble.tscn")
+var bomb = preload("res://power_ups/bomb.tscn")
 
 var triple_jump = preload("res://power_ups/triple_jump.tscn")
 var full_clear = preload("res://power_ups/full_clear.tscn")
