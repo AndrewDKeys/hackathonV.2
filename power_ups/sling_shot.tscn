@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba7otjwrq6cag"]
+
+[ext_resource type="Texture2D" uid="uid://d2e8bd16ydbuv" path="res://hackathon sprites/sling_shot.png" id="1_gfdmk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sy3h"]
+size = Vector2(25, 31)
+
+[node name="SlingShot" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_0sy3h")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(-2.38419e-07, 0)
+scale = Vector2(1.4375, 1.57292)
+texture = ExtResource("1_gfdmk")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6dl7ptgp10m7"]
+
+[ext_resource type="Texture2D" uid="uid://d2vqf6b6771b6" path="res://hackathon sprites/triple_jump.png" id="1_s72lf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3iqdl"]
+size = Vector2(31, 37)
+
+[node name="TripleJump" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(1.83333, 1.93056)
+texture = ExtResource("1_s72lf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0.5, 2.5)
+shape = SubResource("RectangleShape2D_3iqdl")
