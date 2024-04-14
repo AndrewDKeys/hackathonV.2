@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://kgey8cs31thb"]
 
-[ext_resource type="Script" path="res://single-block.gd" id="1_s0ehu"]
-[ext_resource type="Script" path="res://t-block-rotation.gd" id="1_sachq"]
+[ext_resource type="Script" path="res://blocks/single-block.gd" id="1_s0ehu"]
+[ext_resource type="Script" path="res://blocks/t-block-rotation.gd" id="1_sachq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_if60y"]
 size = Vector2(38, 38)
