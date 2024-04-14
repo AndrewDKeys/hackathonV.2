@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4c3lcehpkhp7"]
+[gd_scene load_steps=5 format=3 uid="uid://b4c3lcehpkhp7"]
 
 [ext_resource type="Script" path="res://power_ups/bubble.gd" id="1_hwoab"]
 [ext_resource type="Texture2D" uid="uid://dub30d5vdjnsx" path="res://hackathon sprites/bubble.png" id="1_l73vk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q84qn"]
 radius = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tgckb"]
+radius = 16.0312
 
 [node name="Bubble" type="Node2D"]
 script = ExtResource("1_hwoab")
@@ -17,3 +20,8 @@ texture = ExtResource("1_l73vk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_q84qn")
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D"]
+shape = SubResource("CircleShape2D_tgckb")
