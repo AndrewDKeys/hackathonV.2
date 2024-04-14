@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dirro2cnypfg2"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_5ack6"]
+
+[node name="ROOT" type="Node2D"]
+script = ExtResource("1_5ack6")
+
+[node name="Main" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Main"]
+offset_right = 1153.0
+offset_bottom = 648.0
+color = Color(0, 0, 0.105882, 1)
+
+[node name="Button" type="Button" parent="Main"]
+offset_left = 317.0
+offset_top = 118.0
+offset_right = 850.0
+offset_bottom = 459.0
+text = "Start"
+
+[connection signal="pressed" from="Main/Button" to="." method="_on_button_pressed"]

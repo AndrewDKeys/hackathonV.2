@@ -1,75 +1,74 @@
-[gd_scene load_steps=4 format=3 uid="uid://djrngf05lb07l"]
+[gd_scene load_steps=4 format=3 uid="uid://kgey8cs31thb"]
 
-[ext_resource type="Script" path="res://single-block.gd" id="1_726ix"]
-[ext_resource type="Script" path="res://right-l-rotation.gd" id="1_y5pka"]
+[ext_resource type="Script" path="res://blocks/single-block.gd" id="1_s0ehu"]
+[ext_resource type="Script" path="res://blocks/t-block-rotation.gd" id="1_sachq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ks3c"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_if60y"]
 size = Vector2(38, 38)
 
 [node name="ROOT" type="Node2D"]
-position = Vector2(18, 19)
-script = ExtResource("1_y5pka")
+script = ExtResource("1_sachq")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(-38, 1)
-script = ExtResource("1_726ix")
+position = Vector2(0, 20)
+script = ExtResource("1_s0ehu")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("RectangleShape2D_6ks3c")
+shape = SubResource("RectangleShape2D_if60y")
 
 [node name="ColorRect" type="ColorRect" parent="RigidBody2D"]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
-color = Color(0.937255, 0.533333, 0.0627451, 1)
+color = Color(0.701961, 0.105882, 0.843137, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="RigidBody2D2" type="RigidBody2D" parent="."]
-position = Vector2(42, -39)
-script = ExtResource("1_726ix")
+position = Vector2(0, -20)
+script = ExtResource("1_s0ehu")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
-shape = SubResource("RectangleShape2D_6ks3c")
+shape = SubResource("RectangleShape2D_if60y")
 
 [node name="ColorRect" type="ColorRect" parent="RigidBody2D2"]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
-color = Color(0.937255, 0.533333, 0.0627451, 1)
+color = Color(0.701961, 0.105882, 0.843137, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="RigidBody2D3" type="RigidBody2D" parent="."]
-position = Vector2(2, -39)
-script = ExtResource("1_726ix")
+position = Vector2(-40, 20)
+script = ExtResource("1_s0ehu")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
-shape = SubResource("RectangleShape2D_6ks3c")
+shape = SubResource("RectangleShape2D_if60y")
 
 [node name="ColorRect" type="ColorRect" parent="RigidBody2D3"]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
-color = Color(0.937255, 0.533333, 0.0627451, 1)
+color = Color(0.701961, 0.105882, 0.843137, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="RigidBody2D4" type="RigidBody2D" parent="."]
-position = Vector2(-38, -39)
-script = ExtResource("1_726ix")
+position = Vector2(40, 20)
+script = ExtResource("1_s0ehu")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4"]
-shape = SubResource("RectangleShape2D_6ks3c")
+shape = SubResource("RectangleShape2D_if60y")
 
 [node name="ColorRect" type="ColorRect" parent="RigidBody2D4"]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
-color = Color(0.937255, 0.533333, 0.0627451, 1)
+color = Color(0.701961, 0.105882, 0.843137, 1)
 metadata/_edit_use_anchors_ = true
