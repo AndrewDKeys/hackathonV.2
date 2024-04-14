@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://nubx6e7am732" path="res://hackathon sprites/Manick_StudionsPNG.png" id="2_xp2y3"]
 [ext_resource type="Texture2D" uid="uid://32dxr7e6ae0u" path="res://GameHome.png" id="3_8jtlf"]
 [ext_resource type="FontFile" uid="uid://bgy5wir545d11" path="res://Born2bSportyV2.ttf" id="4_fcdcq"]
-[ext_resource type="Texture2D" uid="uid://ba6683r0o25lr" path="res://GameOverScreen.png" id="5_2aywt"]
+[ext_resource type="Texture2D" uid="uid://c081b7y4fwt4u" path="res://GameOverImg.png" id="5_sd8ii"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uobx7"]
 animations = [{
@@ -38,6 +38,7 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_uobx7")
 
 [node name="Main" type="Node2D" parent="."]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="Main"]
 offset_right = 1156.0
@@ -60,17 +61,45 @@ text = "PLAY"
 [node name="TextureRect" type="TextureRect" parent="EndMenu"]
 offset_right = 1156.0
 offset_bottom = 672.0
-texture = ExtResource("5_2aywt")
+texture = ExtResource("5_sd8ii")
 expand_mode = 1
 
 [node name="TryAgainButton" type="Button" parent="EndMenu/TextureRect"]
-offset_left = 416.0
-offset_top = 309.0
-offset_right = 726.0
-offset_bottom = 397.0
+offset_left = 375.0
+offset_top = 497.0
+offset_right = 685.0
+offset_bottom = 585.0
 theme_override_fonts/font = ExtResource("4_fcdcq")
 theme_override_font_sizes/font_size = 70
 text = "Try Again?"
+
+[node name="ColorRect" type="ColorRect" parent="EndMenu/TextureRect/TryAgainButton"]
+layout_mode = 2
+offset_left = 14.0
+offset_top = -317.0
+offset_right = 288.0
+offset_bottom = -63.0
+color = Color(0, 0, 0, 0.603922)
+
+[node name="Label" type="Label" parent="EndMenu/TextureRect/TryAgainButton/ColorRect"]
+layout_mode = 2
+offset_left = 18.0
+offset_top = 17.0
+offset_right = 254.0
+offset_bottom = 236.0
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_fcdcq")
+theme_override_font_sizes/font_size = 33
+text = "CREDITS:
+Nick Cyran 
+Caleb Clapper 
+Andrew Keyser 
+Michael Angamarca 
+Kaosi Nuel "
+horizontal_alignment = 1
+uppercase = true
 
 [connection signal="pressed" from="Main/TextureRect/StartButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="EndMenu/TextureRect/TryAgainButton" to="." method="_on_endMenu_pressed"]
