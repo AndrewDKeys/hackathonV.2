@@ -4,7 +4,6 @@ signal gameover
 
 const bomb = preload("res://power_ups/bomb.tscn")
 
-
 # Constants
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
@@ -24,6 +23,9 @@ var last_head
 var sound_player = AudioStreamPlayer.new()
 var bg_music = AudioStreamPlayer.new()
 
+var items_on_screen = []
+var my_items = []
+
 # Reference to the AnimationTree node
 @onready var animation_tree = $AnimationTree
 
@@ -36,12 +38,22 @@ func _ready():
 	bg_music.autoplay = true
 	add_child(bg_music)
 	
-	bomb.connect("pick_me", do_item)
+	get_parent().get_node("PowerUpTimer").connect("items_list", init_list)
 
-func do_item(type) -> void:
+
 	
-	print(type)
-	
+func init_list(item) -> void:
+	if item != null:
+		item.connect("pick_me", do_item)
+		items_on_screen.append(item)
+
+func do_item(item) -> void:
+	var x = 0
+	for i in items_on_screen:
+		if i == item:
+			item.queue_free()
+			items_on_screen.remove_at(x)
+		x += 1
 # Physics process function for movement and actions
 func _physics_process(delta):
 	# Check for game over state
@@ -87,6 +99,9 @@ func _physics_process(delta):
 		var sound_effect = load("res://sound effects/landing.wav")
 		sound_player.stream = sound_effect
 		sound_player.play()	
+
+
+	
 
 # Function to check if the character is dead
 func isDead():
