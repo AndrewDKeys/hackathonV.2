@@ -57,21 +57,13 @@ func _physics_process(delta):
 	
 	# Get the input direction and handle movement
 	var direction = Input.get_axis("move_left", "move_right")
-	if direction != 0:
-		# Update facing based on direction
-		if direction > 0:
-			facing = 1  # Facing right
-		else:
-			facing = -1  # Facing left
-		
+	if direction:
 		velocity.x = direction * SPEED
 		
 		# Set the blend position for the walk BlendSpace1D based on the facing direction
 		animation_tree.set("parameters/walk/blend_position", facing)
-	else:
-		# Decelerate velocity towards zero if not using the dash mechanic
-		if not x:
-			velocity.x = move_toward(velocity.x, 0, SPEED * delta)
+	elif not x:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	# Move and slide
 	move_and_slide()
