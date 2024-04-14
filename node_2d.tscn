@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dirro2cnypfg2"]
+[gd_scene load_steps=6 format=3 uid="uid://dirro2cnypfg2"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_5ack6"]
 [ext_resource type="Texture2D" uid="uid://nubx6e7am732" path="res://hackathon sprites/Manick_StudionsPNG.png" id="2_xp2y3"]
+[ext_resource type="Texture2D" uid="uid://32dxr7e6ae0u" path="res://GameHome.png" id="3_8jtlf"]
+[ext_resource type="FontFile" uid="uid://bgy5wir545d11" path="res://Born2bSportyV2.ttf" id="4_fcdcq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uobx7"]
 animations = [{
@@ -18,6 +20,7 @@ animations = [{
 script = ExtResource("1_5ack6")
 
 [node name="Background" type="ColorRect" parent="."]
+visible = false
 offset_right = 1153.0
 offset_bottom = 650.0
 color = Color(0, 0, 0.105882, 1)
@@ -37,14 +40,23 @@ sprite_frames = SubResource("SpriteFrames_uobx7")
 
 [node name="Main" type="Node2D" parent="."]
 
-[node name="StartButton" type="Button" parent="Main"]
-offset_left = 378.0
-offset_top = 150.0
-offset_right = 754.0
-offset_bottom = 511.0
-text = "START"
+[node name="TextureRect" type="TextureRect" parent="Main"]
+offset_right = 1156.0
+offset_bottom = 672.0
+texture = ExtResource("3_8jtlf")
+expand_mode = 1
+
+[node name="StartButton" type="Button" parent="Main/TextureRect"]
+offset_left = 372.0
+offset_top = 557.0
+offset_right = 805.0
+offset_bottom = 639.0
+theme_override_fonts/font = ExtResource("4_fcdcq")
+theme_override_font_sizes/font_size = 58
+text = "PLAY"
 
 [node name="EndMenu" type="Node2D" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="EndMenu"]
 offset_left = 342.0
@@ -60,5 +72,5 @@ offset_right = 644.0
 offset_bottom = 327.0
 text = "Try Again?"
 
-[connection signal="pressed" from="Main/StartButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Main/TextureRect/StartButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="EndMenu/Button" to="." method="_on_endMenu_pressed"]

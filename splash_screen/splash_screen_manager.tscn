@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq32ws3651852"]
+
+[ext_resource type="Script" path="res://splash_screen/SplashScreenManager.gd" id="1_8cilk"]
+[ext_resource type="PackedScene" uid="uid://dirro2cnypfg2" path="res://node_2d.tscn" id="2_yjejn"]
+[ext_resource type="PackedScene" uid="uid://dwk2m387qgm42" path="res://splash_screen/controller_splash_screen.tscn" id="3_yhlkb"]
+
+[node name="SplashScreenManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8cilk")
+_move_to = ExtResource("2_yjejn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.113725, 0.0705882, 0.203922, 1)
+
+[node name="SplashScreenContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ControllerSplashScreen" parent="SplashScreenContainer" instance=ExtResource("3_yhlkb")]
+layout_mode = 2
+_fade_time = 2.0
