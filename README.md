@@ -6,7 +6,7 @@
 
 ### Developed by Manick Studios 
 
-Blockade was made for the IEEE Hack-A-Damien GameJam 2024 under the theme "Same Level, Different Challenges".
+Blockade was made for the IEEE Hack-A-Damien Hackathon 2024 under the theme "Same Level, Different Challenges".
 
 **Game Loop:** 
 
